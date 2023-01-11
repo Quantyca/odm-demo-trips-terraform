@@ -27,19 +27,6 @@ resource "confluent_schema" "tripEvent" {
     secret = var.confluent_schema_registry_secret
   }
 }
-resource "confluent_schema" "tripCurrentSnapshot" {
-  schema_registry_cluster {
-    id = var.confluent_schema_registry.id
-  }
-  format = "AVRO"
-  rest_endpoint = var.confluent_schema_registry.rest_endpoint
-  subject_name = "tripCurrentSnapshot"
-  schema = file("${path.module}/tripCurrentSnapshot-oport-schema.avsc")
-  credentials {
-    key    = var.confluent_schema_registry_key
-    secret = var.confluent_schema_registry_secret
-  }
-}
 resource "confluent_schema" "tripRouteHistory" {
   schema_registry_cluster {
     id = var.confluent_schema_registry.id
