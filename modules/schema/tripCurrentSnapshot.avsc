@@ -1,0 +1,81 @@
+{
+  "type": "record",
+  "namespace": "com.example",
+  "name": "tripCurrentSnapshot",
+  "doc": "The current snapshot of a trip related to its status and the position of its vector",
+  "fields": [
+    {
+      "name": "tripId",
+      "doc": "The unique identifier of a trip",
+      "type": {
+        "type": "enum",
+        "name": "tripId",
+        "symbols": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
+         "default": "T1"  
+      },
+      "default": "T1"  
+    },
+    {
+      "name": "tripCurrentStatus",
+      "doc": "The current status of a trip",
+      "type": {
+        "type": "enum",
+        "name": "tripCurrentStatus",
+        "symbols": [
+          "planned",
+          "started",
+          "arrived",
+          "completed"
+        ],
+         "default": "planned"  
+      },
+      "default": "planned"
+    },
+    {
+      "name": "vectorCurrentPositionLat",
+      "doc": "The current latitude of the vector",
+      "type": {
+        "type": "enum",
+        "name": "vectorCurrentPositionLat",
+        "symbols": [
+          "L10",
+          "L15",
+          "L20",
+          "L25",
+          "L30"
+        ],
+         "default": "L10"  
+      },
+      "default": "L10"
+    },
+    {
+      "name": "vectorCurrentPositionLong",
+      "doc": "The current longitude of the vector",
+      "type": {
+        "type": "enum",
+        "name": "vectorCurrentPositionLong",
+        "symbols": [
+          "L10",
+          "L15",
+          "L20",
+          "L25",
+          "L30"
+        ],
+         "default": "L10"  
+      },
+      "default": "L10"
+    },
+    {
+      "name": "eventTimestamp",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "The timestamp of the last update to the trip"
+    }
+  ]
+}

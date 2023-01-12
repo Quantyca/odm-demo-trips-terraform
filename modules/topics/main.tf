@@ -19,10 +19,6 @@ resource "confluent_kafka_topic" "tripEvent" {
   kafka_cluster {
     id = var.cluster_id
   }
-  config = {
-    "confluent.value.schema.validation" = "true",
-    "confluent.value.subject.name.strategy" = "io.confluent.kafka.serializers.subject.RecordNameStrategy"
-  }
   topic_name         = "tripEvent"
   partitions_count   = 6
 }
@@ -30,20 +26,12 @@ resource "confluent_kafka_topic" "tripCurrentSnapshot" {
   kafka_cluster {
     id = var.cluster_id
   }
-  config = {
-    "confluent.value.schema.validation" = "true",
-    "confluent.value.subject.name.strategy" = "io.confluent.kafka.serializers.subject.RecordNameStrategy"
-  }
   topic_name         = "tripCurrentSnapshot"
   partitions_count   = 6
 }
 resource "confluent_kafka_topic" "tripRouteHistory" {
   kafka_cluster {
     id = var.cluster_id
-  }
-  config = {
-    "confluent.value.schema.validation" = "true",
-    "confluent.value.subject.name.strategy" = "io.confluent.kafka.serializers.subject.RecordNameStrategy"
   }
   topic_name         = "tripRouteHistory"
   partitions_count   = 6

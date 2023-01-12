@@ -1,0 +1,71 @@
+{
+  "type": "record",
+  "namespace": "com.example",
+  "name": "tripRouteHistory",
+  "doc": "The tracking of all the positions recorded for each trip",
+  "fields": [
+    {
+      "name": "tripId",
+      "doc": "The unique identifier of a trip",
+      "type": {
+        "type": "enum",
+        "name": "tripId",
+        "symbols": [
+          "T1",
+          "T2",
+          "T3",
+          "T4",
+          "T5"
+        ],
+         "default": "T1"  
+      },
+      "default": "T1"  
+    },
+    {
+      "name": "vectorPositionId",
+      "type": "int",
+      "logicalType": "smallint",
+      "doc": "The id of the position related to the route made by the vector"
+    },
+    {
+      "name": "vectorCurrentPositionLat",
+      "doc": "The current latitude of the vector",
+      "type": {
+        "type": "enum",
+        "name": "vectorCurrentPositionLat",
+        "symbols": [
+          "L10",
+          "L15",
+          "L20",
+          "L25",
+          "L30"
+        ],
+         "default": "L10"  
+      },
+      "default": "L10"
+    },
+    {
+      "name": "vectorCurrentPositionLong",
+      "doc": "The current longitude of the vector",
+      "type": {
+        "type": "enum",
+        "name": "vectorCurrentPositionLong",
+        "symbols": [
+          "L10",
+          "L15",
+          "L20",
+          "L25",
+          "L30"
+        ],
+         "default": "L10"  
+      },
+      "default": "L10"
+    },
+    {
+      "name": "eventTimestamp",
+      "type": "long",
+      "logicalType": "timestamp-millis",
+      "doc": "The timestamp when the vector reached the position"
+    }
+  ]
+}
