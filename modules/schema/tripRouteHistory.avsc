@@ -22,12 +22,6 @@
       "default": "T1"  
     },
     {
-      "name": "vectorPositionId",
-      "type": "int",
-      "logicalType": "smallint",
-      "doc": "The id of the position related to the route made by the vector"
-    },
-    {
       "name": "vectorCurrentPositionLat",
       "doc": "The current latitude of the vector",
       "type": {
