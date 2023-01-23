@@ -17,7 +17,6 @@ terraform {
   backend "s3" {
     bucket = "odm-demo-trips-terraformstate-bucket"
     region = "eu-west-1"
-    profile = "AWSAdministratorAccess-750432630138"
     key = "terraform.state"
   }
 }
@@ -25,7 +24,6 @@ terraform {
 # Configure the AWS Provider
 provider "aws" {
   region = "eu-west-1"
-  profile = "AWSAdministratorAccess-750432630138"
 }
 
 provider "confluent" {
