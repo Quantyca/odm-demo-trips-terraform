@@ -27,7 +27,7 @@ provider "aws" {
 }
 
 provider "confluent" {
-  cd       = var.confluent_cloud_api_key
+  cloud_api_key       = var.confluent_cloud_api_key
   cloud_api_secret    = var.confluent_cloud_api_secret
   kafka_api_key       = var.kafka_api_key
   kafka_api_secret    = var.kafka_api_secret 
