@@ -12,13 +12,13 @@ terraform {
           source = "hashicorp/aws"
           version = "~> 4.0"
     }
+  }
 
-    backend "s3" {
-      bucket = "odm-demo-trips-terraformstate-bucket"
-      region = "eu-west-1"
-      # profile = "abc"
-      key = "terraform.state"
-    }
+  backend "s3" {
+    bucket = "odm-demo-trips-terraformstate-bucket"
+    region = "eu-west-1"
+    # profile = "abc"
+    key = "terraform.state"
   }
 }
 
