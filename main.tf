@@ -8,11 +8,28 @@ terraform {
       source  = "confluentinc/confluent"
       version = "1.23.0"
     }
+    aws = {
+          source = "hashicorp/aws"
+          version = "~> 4.0"
+    }
+
+    backend "s3" {
+      bucket = "odm-demo-trips-terraformstate-bucket"
+      region = "eu-west-1"
+      # profile = "abc"
+      key = "terraform.state"
+    }
   }
 }
 
+# Configure the AWS Provider
+provider "aws" {
+  region = "eu-west-1"
+  # profile = "abc"
+}
+
 provider "confluent" {
-  cloud_api_key       = var.confluent_cloud_api_key
+  cd       = var.confluent_cloud_api_key
   cloud_api_secret    = var.confluent_cloud_api_secret
   kafka_api_key       = var.kafka_api_key
   kafka_api_secret    = var.kafka_api_secret 
